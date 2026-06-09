@@ -12,6 +12,9 @@ Protótipo IoT da plataforma de monitoramento agrícola Eclipse Protocol, desenv
 ## Vídeo
 https://youtu.be/9YPKNYj2yQ4
 
+## Projeto no wokwi
+https://wokwi.com/projects/466394968063941633
+
 ## Como executar
 1. Abra o projeto no Wokwi
 2. Inicie a simulação
