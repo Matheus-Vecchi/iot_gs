@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "author": "Eclipse Protocol",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -120, "left": 200, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 100, "left": 200, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -50, "left": -120, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led2", "top": 0, "left": -120, "attrs": { "color": "green" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": -50, "left": -180, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r2", "top": 0, "left": -180, "attrs": { "value": "220" } },
+    { "type": "board-ssd1306", "id": "oled1", "top": 150, "left": -100, "attrs": {} }
+  ],
+  "connections": [
+    [ "dht1:VCC", "esp:3V3", "red", [] ],
+    [ "dht1:GND", "esp:GND.1", "black", [] ],
+    [ "dht1:SDA", "esp:D15", "green", [] ],
+
+    [ "pot1:VCC", "esp:3V3", "red", [] ],
+    [ "pot1:GND", "esp:GND.2", "black", [] ],
+    [ "pot1:SIG", "esp:D34", "blue", [] ],
+
+    [ "esp:D2", "r1:1", "orange", [] ],
+    [ "r1:2", "led1:A", "orange", [] ],
+    [ "led1:C", "esp:GND.1", "black", [] ],
+
+    [ "esp:D4", "r2:1", "green", [] ],
+    [ "r2:2", "led2:A", "green", [] ],
+    [ "led2:C", "esp:GND.1", "black", [] ],
+
+    [ "oled1:VCC", "esp:3V3", "red", [] ],
+    [ "oled1:GND", "esp:GND.3", "black", [] ],
+    [ "oled1:SDA", "esp:D21", "green", [] ],
+    [ "oled1:SCL", "esp:D22", "yellow", [] ]
+  ]
+}
